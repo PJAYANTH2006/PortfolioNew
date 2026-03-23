@@ -1,76 +1,68 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useInView, useMotionValue, useTransform, animate, Variants } from "framer-motion";
+import { useRef } from "react";
+import { motion, useMotionValue, useMotionTemplate } from "framer-motion";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import { skills } from "@/lib/data";
-import {
-  Braces,
-  Blocks,
-  Database,
-  Code2,
-  Cpu,
-  Wrench,
-  Terminal,
-  Layout,
-  Layers
-} from "lucide-react";
+import { Terminal, Layout, Layers } from "lucide-react";
 
-function AnimatedNumber({ value }: { value: number }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, Math.round);
+function AnimatedBadge({ name, index }: { name: string; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
 
-  useEffect(() => {
-    if (inView) {
-      const controls = animate(count, value, { duration: 1.5, ease: "easeOut" });
-      return controls.stop;
-    }
-  }, [inView, value, count]);
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    x.set(e.clientX - rect.left);
+    y.set(e.clientY - rect.top);
+  };
 
-  return <motion.span ref={ref}>{rounded}</motion.span>;
-}
-
-function SkillBar({ name, level, index }: { name: string; level: number; index: number }) {
   return (
-    <div className="flex flex-col gap-2 group">
-      <div className="flex justify-between items-center text-[13px] font-semibold tracking-wide">
-        <span className="text-text group-hover:text-brand transition-colors duration-300">
-          {name}
-        </span>
-        <span className="text-muted font-mono"><AnimatedNumber value={level} />%</span>
-      </div>
-      <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden relative shadow-inner">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${level}%` }}
-          viewport={{ once: true, margin: "-10% 0px" }}
-          transition={{ duration: 1.5, delay: 0.1 * index, ease: "easeOut" }}
-          className="h-full bg-gradient-to-r from-brand to-brand-secondary rounded-full relative"
-        >
-          {/* Shimmer effect inside the bar */}
-          <div className="absolute inset-0 bg-white/20 w-full h-full transform -skew-x-12 translate-x-[-100%] group-hover:animate-[shimmer_2s_infinite]" />
-        </motion.div>
-      </div>
-    </div>
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-10% 0px" }}
+      animate={{ y: [0, -3, 0] }}
+      transition={{
+        opacity: { delay: index * 0.05, duration: 0.3 },
+        scale: { delay: index * 0.05, duration: 0.3 },
+        y: {
+          repeat: Infinity,
+          duration: 3 + (index % 3), // Varied duration for organic feel
+          delay: index * 0.2,
+          ease: "easeInOut",
+        },
+      }}
+      className="relative overflow-hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-text group cursor-default"
+    >
+      {/* Spotlight effect */}
+      <motion.div
+        className="pointer-events-none absolute -inset-px rounded-full opacity-0 transition duration-300 group-hover:opacity-100"
+        style={{
+          background: useMotionTemplate`
+            radial-gradient(
+              65px circle at ${x}px ${y}px,
+              rgba(59, 130, 246, 0.4),
+              transparent 80%
+            )
+          `,
+        }}
+      />
+      <span className="relative z-10">{name}</span>
+    </motion.div>
   );
 }
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
+    y: 0,
   },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
 };
 
 export default function Skills() {
@@ -81,15 +73,16 @@ export default function Skills() {
         subtitle="Depth across languages, frameworks, and tools that keep shipping velocity high."
       />
       <motion.div
-        variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-10% 0px" }}
+        transition={{ staggerChildren: 0.15 }}
         className="grid gap-6 lg:grid-cols-3"
       >
         {/* Languages Card */}
         <motion.div
           variants={cardVariants}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
           whileHover={{ y: -5 }}
           className="glass rounded-3xl p-8 transition-all hover:shadow-glow flex flex-col gap-6"
         >
@@ -98,9 +91,9 @@ export default function Skills() {
               <p className="text-xs uppercase tracking-[0.3em] text-muted">Languages</p>
               <Terminal size={18} className="text-brand opacity-80" />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-wrap gap-3">
               {skills.languages.map((item, index) => (
-                <SkillBar key={item.name} name={item.name} level={item.level} index={index} />
+                <AnimatedBadge key={item.name} name={item.name} index={index} />
               ))}
             </div>
           </div>
@@ -109,6 +102,7 @@ export default function Skills() {
         {/* Frameworks Card */}
         <motion.div
           variants={cardVariants}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
           whileHover={{ y: -5 }}
           className="glass rounded-3xl p-8 transition-all hover:shadow-glow flex flex-col gap-6"
         >
@@ -117,9 +111,9 @@ export default function Skills() {
               <p className="text-xs uppercase tracking-[0.3em] text-muted">Frameworks</p>
               <Layout size={18} className="text-brand opacity-80" />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-wrap gap-3">
               {skills.frameworks.map((item, index) => (
-                <SkillBar key={item.name} name={item.name} level={item.level} index={index} />
+                <AnimatedBadge key={item.name} name={item.name} index={index} />
               ))}
             </div>
           </div>
@@ -128,6 +122,7 @@ export default function Skills() {
         {/* Tools Card */}
         <motion.div
           variants={cardVariants}
+          transition={{ type: "spring", stiffness: 100, damping: 15 }}
           whileHover={{ y: -5 }}
           className="glass rounded-3xl p-8 transition-all hover:shadow-glow flex flex-col gap-6"
         >
@@ -136,9 +131,9 @@ export default function Skills() {
               <p className="text-xs uppercase tracking-[0.3em] text-muted">Tools / Platforms</p>
               <Layers size={18} className="text-brand opacity-80" />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-wrap gap-3">
               {skills.tools.map((item, index) => (
-                <SkillBar key={item.name} name={item.name} level={item.level} index={index} />
+                <AnimatedBadge key={item.name} name={item.name} index={index} />
               ))}
             </div>
           </div>
