@@ -6,6 +6,41 @@ import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import { skills } from "@/lib/data";
 import { Terminal, Layout, Layers } from "lucide-react";
+import { 
+  SiCplusplus, 
+  SiJavascript, 
+  SiC, 
+  SiPhp, 
+  SiPython, 
+  SiHtml5, 
+  SiCss,
+  SiNodedotjs, 
+  SiReact, 
+  SiMysql, 
+  SiMongodb, 
+  SiGit, 
+  SiDocker, 
+  SiApachemaven 
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+
+const iconMap: Record<string, React.ReactNode> = {
+  "C++": <SiCplusplus size={14} className="text-[#00599C]" />,
+  "JavaScript": <SiJavascript size={14} className="text-[#F7DF1E]" />,
+  "C": <SiC size={14} className="text-[#A8B9CC]" />,
+  "PHP": <SiPhp size={14} className="text-[#777BB4]" />,
+  "Python": <SiPython size={14} className="text-[#3776AB]" />,
+  "Java": <FaJava size={14} className="text-[#007396]" />,
+  "HTML": <SiHtml5 size={14} className="text-[#E34F26]" />,
+  "CSS": <SiCss size={14} className="text-[#1572B6]" />,
+  "Node.js": <SiNodedotjs size={14} className="text-[#339933]" />,
+  "React.js": <SiReact size={14} className="text-[#61DAFB]" />,
+  "MySQL": <SiMysql size={14} className="text-[#4479A1]" />,
+  "MongoDB": <SiMongodb size={14} className="text-[#47A248]" />,
+  "Git": <SiGit size={14} className="text-[#F05032]" />,
+  "Docker": <SiDocker size={14} className="text-[#2496ED]" />,
+  "Maven": <SiApachemaven size={14} className="text-[#C71A22]" />,
+};
 
 function AnimatedBadge({ name, index }: { name: string; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,14 +67,13 @@ function AnimatedBadge({ name, index }: { name: string; index: number }) {
         scale: { delay: index * 0.05, duration: 0.3 },
         y: {
           repeat: Infinity,
-          duration: 3 + (index % 3), // Varied duration for organic feel
+          duration: 3 + (index % 3),
           delay: index * 0.2,
           ease: "easeInOut",
         },
       }}
       className="relative overflow-hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-text group cursor-default"
     >
-      {/* Spotlight effect */}
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-full opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
@@ -52,7 +86,10 @@ function AnimatedBadge({ name, index }: { name: string; index: number }) {
           `,
         }}
       />
-      <span className="relative z-10">{name}</span>
+      <span className="relative z-10 flex items-center gap-2">
+        {iconMap[name]}
+        {name}
+      </span>
     </motion.div>
   );
 }
