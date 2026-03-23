@@ -8,6 +8,7 @@ import { projects } from "@/lib/data";
 import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 import { cn } from "@/lib/utils";
+import ScrollSkew from "./ScrollSkew";
 
 export default function Projects() {
   const [active, setActive] = useState("All");
@@ -48,7 +49,7 @@ export default function Projects() {
           </button>
         ))}
       </div>
-      <div className="grid gap-6 lg:grid-cols-3">
+      <ScrollSkew className="grid gap-6 lg:grid-cols-3">
         {filtered.map((project, index) => (
           <motion.div
             key={project.title}
@@ -63,7 +64,7 @@ export default function Projects() {
             />
           </motion.div>
         ))}
-      </div>
+      </ScrollSkew>
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
     </Section>
   );

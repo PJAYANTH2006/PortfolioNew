@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 import Magnetic from "./Magnetic";
 import { Github, Linkedin, Mail } from "lucide-react";
+import StaggerReveal from "./StaggerReveal";
 
 const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
@@ -49,6 +50,41 @@ function TypingText() {
   );
 }
 
+function LiveBadge() {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const updateTime = () => {
+      const formatter = new Intl.DateTimeFormat("en-US", {
+        hour: "numeric",
+        minute: "numeric",
+        hour12: true,
+      });
+      setTime(formatter.format(new Date()));
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="flex flex-wrap items-center gap-3 mb-2">
+      <div className="flex items-center gap-2 rounded-full border border-border/50 bg-white/5 py-1.5 px-3 text-xs font-medium text-text backdrop-blur-md">
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+        </span>
+        Available for work
+      </div>
+      {time && (
+        <div className="flex items-center gap-2 rounded-full border border-border/50 bg-white/5 py-1.5 px-3 text-xs font-medium text-text backdrop-blur-md">
+          <span>📍 Local Time</span>
+          <span className="text-muted">{time}</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-6 pt-28">
@@ -59,13 +95,20 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          <TypingText />
-          <h1 className="font-display text-4xl font-semibold leading-tight text-text sm:text-5xl lg:text-6xl">
-            {profile.name}
-            <span className="block text-gradient">Full Stack Developer</span>
+          <div className="flex flex-col gap-2">
+            <LiveBadge />
+            <div>
+              <TypingText />
+            </div>
+          </div>
+          <h1 className="font-display text-4xl font-semibold leading-tight text-text sm:text-5xl lg:text-6xl flex flex-col gap-1">
+            <StaggerReveal text={profile.name} />
+            <span className="block text-gradient">
+              <StaggerReveal text="Full Stack Developer" delay={0.4} />
+            </span>
           </h1>
           <p className="text-lg text-muted sm:text-xl">{profile.headline}</p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 mt-2">
             <Magnetic>
               <a
                 href="#projects"
@@ -83,7 +126,7 @@ export default function Hero() {
               </a>
             </Magnetic>
           </div>
-          <div className="flex items-center gap-4 text-muted">
+          <div className="flex items-center gap-4 text-muted mt-2">
             <a
               href={profile.github}
               target="_blank"

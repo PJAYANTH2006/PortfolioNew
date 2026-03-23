@@ -1,3 +1,7 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type SectionHeaderProps = {
@@ -11,22 +15,43 @@ export default function SectionHeader({
   subtitle,
   align = "left",
 }: SectionHeaderProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const yBg = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const yFg = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
   return (
-    <div
+    <motion.div
+      ref={ref}
       className={cn(
         "mb-10 flex flex-col gap-3",
         align === "center" && "items-center text-center"
       )}
     >
-      <span className="text-xs uppercase tracking-[0.35em] text-muted">
+      <motion.span 
+        style={{ y: yBg }}
+        className="text-xs uppercase tracking-[0.35em] text-muted inline-block"
+      >
         Highlight
-      </span>
-      <h2 className="font-display text-3xl font-semibold text-text sm:text-4xl">
+      </motion.span>
+      <motion.h2 
+        style={{ y: yFg }}
+        className="font-display text-3xl font-semibold text-text sm:text-4xl"
+      >
         {title}
-      </h2>
+      </motion.h2>
       {subtitle ? (
-        <p className="max-w-2xl text-base text-muted">{subtitle}</p>
+        <motion.p 
+          style={{ y: yBg }}
+          className="max-w-2xl text-base text-muted"
+        >
+          {subtitle}
+        </motion.p>
       ) : null}
-    </div>
+    </motion.div>
   );
 }
