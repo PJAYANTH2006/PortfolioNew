@@ -90,7 +90,7 @@ export const projects = [
       "Interactive web interface deployed on Vercel.",
     ],
     github: "https://github.com/PJAYANTH2006",
-    demo: "https://aiproject-chatbot2-h63vuok7h-jayanths-projects-f05a8f0b.vercel.app/",
+    demo: "https://aiproject-chatbot2.vercel.app/",
   },
 ];
 
@@ -99,6 +99,7 @@ export const experience = [
     company: "InternsVeda - Edu Tech Private Limited",
     role: "Full Stack Development Intern",
     period: "Internship",
+    image: "/images/Intership.png",
     summary: [
       "Built a full-stack blog platform with secure signup, rich text, and profiles.",
       "Optimized Node.js/Express APIs to reduce response time by 30%.",
@@ -113,24 +114,28 @@ export const certifications = [
     issuer: "Oracle",
     year: "Oct 2025",
     note: "Enterprise networking fundamentals and security.",
+    image: "/images/networkin.png",
   },
   {
     title: "AI Foundations Associate",
     issuer: "Oracle",
     year: "Nov 2025",
     note: "Applied AI fundamentals and data workflows.",
+    image: "/images/AI_foundation.png",
   },
   {
     title: "Cloud Computing",
     issuer: "NPTEL",
     year: "Apr 2025",
     note: "Cloud architecture, virtualization, and services.",
+    image: "/images/Nptel.png",
   },
   {
     title: "MERN Full Stack Development",
     issuer: "Gokboru Pvt Ltd",
     year: "Jul 2025",
     note: "Full-stack web development with the MERN stack.",
+    image: "/images/gokboru.png",
   },
 ];
 
