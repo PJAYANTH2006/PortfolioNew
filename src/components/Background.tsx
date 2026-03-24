@@ -8,10 +8,10 @@ export default function Background() {
       <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.08]" />
       <div className="absolute inset-0 bg-grid opacity-[0.2]" />
       <motion.div
-        className="absolute left-[10%] top-[8%] h-[28rem] w-[28rem] bg-brand/35 blur-[140px]"
+        className="absolute left-[10%] top-[8%] h-[28rem] w-[28rem] bg-brand/20 blur-3xl"
         animate={{ 
           y: [0, 40, 0], 
-          opacity: [0.4, 0.8, 0.4],
+          opacity: [0.6, 1, 0.6],
           borderRadius: [
             "40% 60% 70% 30% / 40% 50% 60% 50%",
             "60% 40% 30% 70% / 60% 30% 70% 40%",
@@ -21,11 +21,11 @@ export default function Background() {
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[5%] top-[5%] h-[25rem] w-[25rem] bg-brand-secondary/35 blur-[140px]"
+        className="absolute right-[5%] top-[5%] h-[25rem] w-[25rem] bg-brand-secondary/20 blur-3xl"
         animate={{ 
           y: [0, -50, 0], 
           x: [0, -30, 0],
-          opacity: [0.4, 0.7, 0.4],
+          opacity: [0.6, 0.9, 0.6],
           borderRadius: [
             "60% 40% 30% 70% / 60% 30% 70% 40%",
             "40% 60% 70% 30% / 40% 50% 60% 50%",
@@ -35,10 +35,10 @@ export default function Background() {
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-[2%] left-[30%] h-[30rem] w-[30rem] bg-brand-accent/25 blur-[160px]"
+        className="absolute bottom-[2%] left-[30%] h-[30rem] w-[30rem] bg-brand-accent/15 blur-3xl"
         animate={{ 
           y: [0, 30, 0], 
-          opacity: [0.3, 0.7, 0.3],
+          opacity: [0.5, 0.8, 0.5],
           borderRadius: [
             "30% 70% 50% 50% / 50% 30% 70% 50%",
             "50% 50% 30% 70% / 30% 70% 50% 50%",
