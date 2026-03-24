@@ -63,8 +63,8 @@ export const projects = [
       "Custom WebRTC mesh with Web Audio API for active speaker highlighting.",
       "RBAC system with Architect vs Client permissions and Redline reviews.",
     ],
-    github: "https://github.com/PJAYANTH2006",
-    demo: "https://pjayanth2006.github.io/jay-s_portfolio/",
+    github: "https://github.com/PJAYANTH2006/Capstone.git",
+    demo: "https://capstone-wine-two.vercel.app/",
   },
   {
     title: "Melody Heaven",
@@ -76,8 +76,8 @@ export const projects = [
       "RESTful API with Node.js/Express and MongoDB storage.",
       "User login, keyword search, and playlist CRUD flows.",
     ],
-    github: "https://github.com/PJAYANTH2006",
-    demo: "https://pjayanth2006.github.io/jay-s_portfolio/",
+    github: "https://github.com/PJAYANTH2006/melody-haven-75.git",
+    demo: "https://github.com/PJAYANTH2006/melody-haven-75.git",
   },
   {
     title: "AI DIY Home Repair Guide",
@@ -90,7 +90,7 @@ export const projects = [
       "Interactive web interface deployed on Vercel.",
     ],
     github: "https://github.com/PJAYANTH2006",
-    demo: "https://pjayanth2006.github.io/jay-s_portfolio/",
+    demo: "https://aiproject-chatbot2-h63vuok7h-jayanths-projects-f05a8f0b.vercel.app/",
   },
 ];
 
