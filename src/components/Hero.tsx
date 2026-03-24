@@ -155,52 +155,29 @@ export default function Hero() {
           </div>
         </motion.div>
         <motion.div
-          className="glass relative flex flex-col items-center gap-6 overflow-hidden rounded-3xl p-8"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="relative flex flex-col items-center justify-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
         >
           <motion.div
-            className="relative flex h-40 w-40 items-center justify-center rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] overflow-hidden shadow-[0_0_20px_rgba(var(--brand),0.3)] border-2 border-brand/30"
+            className="relative flex h-72 w-72 sm:h-80 sm:w-80 lg:h-96 lg:w-96 items-center justify-center rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] overflow-hidden shadow-[0_0_40px_rgba(var(--brand),0.3)] border-[3px] border-brand/40"
             animate={{ 
-              y: [0, -15, 0],
+              y: [0, -20, 0],
               borderRadius: [
                 "40% 60% 70% 30% / 40% 50% 60% 50%",
                 "60% 40% 30% 70% / 60% 30% 70% 40%",
                 "40% 60% 70% 30% / 40% 50% 60% 50%"
               ]
             }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
           >
             <img 
               src="/images/passport.png" 
               alt="Professional Profile" 
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover scale-[1.02]"
             />
           </motion.div>
-          <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-muted">
-              Portfolio Focus
-            </p>
-            <p className="mt-3 text-base text-text">
-              Real-time systems, AI-guided workflows, and refined product
-              experiences.
-            </p>
-          </div>
-          <div className="grid w-full grid-cols-2 gap-4">
-            <div className="rounded-2xl bg-white/10 p-4">
-              <p className="text-xs uppercase tracking-[0.25em] text-muted">
-                Stack
-              </p>
-              <p className="mt-2 text-sm text-text">React • Node • MongoDB</p>
-            </div>
-            <div className="rounded-2xl bg-white/10 p-4">
-              <p className="text-xs uppercase tracking-[0.25em] text-muted">
-                Focus
-              </p>
-              <p className="mt-2 text-sm text-text">Collaboration tooling</p>
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
