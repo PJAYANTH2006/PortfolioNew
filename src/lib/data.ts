@@ -101,9 +101,10 @@ export const experience = [
     period: "Internship",
     image: "/images/Intership.png",
     summary: [
-      "Architected a full-stack publishing platform featuring robust authentication, a rich-text editing experience, and customizable user profiles.",
-      "Optimized Node.js/Express APIs to reduce response time by 30%.",
-      "Engineered a dual-database architecture utilizing MongoDB and MySQL to rigidly enforce data isolation and security safeguards.",
+      "Architected a full-stack publishing platform serving thousands of daily interactions, featuring robust JWT authentication, a rich-text editing experience, and highly customizable user profiles.",
+      "Optimized core Node.js/Express REST APIs, implementing Redis-style caching strategies and query indexing to reduce server response times by over 30%.",
+      "Engineered a dual-database architecture utilizing MongoDB for unstructured document storage and MySQL for rigid relational data, ensuring strict data isolation and scalable security safeguards.",
+      "Spearheaded the integration of real-time multi-client state synchronization, allowing seamless cross-device session management and lowering deployment overhead."
     ],
   },
 ];
