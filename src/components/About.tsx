@@ -6,15 +6,18 @@ import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
 import TechOrbit from "./TechOrbit";
+import ScrollRevealText from "./ScrollRevealText";
 
 export default function About() {
   return (
     <Section id="about">
+      <ScrollRevealText text="I engineer real-time, highly collaborative products. By blending deep UX clarity with reliable backend infrastructure, I ship software that feels incredibly fast and fundamentally trustworthy." />
+
       <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-6">
           <SectionHeader
-            title="Product-first engineering, end to end"
-            subtitle="I blend UX clarity with reliable backend systems to ship experiences that feel fast, collaborative, and trustworthy."
+            title="Product-first engineering"
+            subtitle="My core approach to full-stack development."
           />
           <Reveal>
             <div className="liquid-float">
