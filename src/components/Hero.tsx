@@ -161,15 +161,22 @@ export default function Hero() {
           transition={{ delay: 0.2 }}
         >
           <motion.div
-            className="gradient-border flex h-40 w-40 items-center justify-center rounded-full p-[3px]"
-            animate={{ y: [0, -10, 0] }}
+            className="relative flex h-40 w-40 items-center justify-center rounded-[40%_60%_70%_30%_/_40%_50%_60%_50%] overflow-hidden shadow-[0_0_20px_rgba(var(--brand),0.3)] border-2 border-brand/30"
+            animate={{ 
+              y: [0, -15, 0],
+              borderRadius: [
+                "40% 60% 70% 30% / 40% 50% 60% 50%",
+                "60% 40% 30% 70% / 60% 30% 70% 40%",
+                "40% 60% 70% 30% / 40% 50% 60% 50%"
+              ]
+            }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="flex h-full w-full items-center justify-center rounded-full bg-[#0b0f19]">
-              <div className="flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-secondary text-3xl font-display text-white">
-                SJ
-              </div>
-            </div>
+            <img 
+              src="/images/passport.png" 
+              alt="Professional Profile" 
+              className="h-full w-full object-cover"
+            />
           </motion.div>
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-muted">
