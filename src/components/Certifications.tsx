@@ -78,10 +78,10 @@ export default function Certifications() {
                       src={(cert as any).image} 
                       alt={`${cert.title} preview`} 
                       fill 
-                      className="object-cover opacity-20 transition-all duration-700 group-hover:opacity-50 group-hover:scale-105" 
+                      className="object-cover opacity-40 transition-all duration-700 group-hover:opacity-80 group-hover:scale-105" 
                       unoptimized
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-[#0b0f19]/70 to-[#0b0f19]/30" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f19] via-[#0b0f19]/60 to-[#0b0f19]/20 group-hover:via-[#0b0f19]/80 transition-colors duration-700" />
                   </div>
                 )}
                 <div className="relative z-10 flex h-full flex-col justify-between">
