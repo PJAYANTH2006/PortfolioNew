@@ -18,10 +18,10 @@ export default function About() {
           <Reveal>
             <div className="glass rounded-3xl p-6">
               <p className="text-sm text-muted">
-                {profile.name} is a {profile.role} who builds real-time
+                I am a {profile.role} who builds real-time
                 collaboration tools, AI-guided workflows, and scalable
-                full-stack platforms. I focus on measurable impact, from latency
-                reduction to smoother onboarding and safer data handling.
+                full-stack platforms. I focus on delivering measurable impact—from latency
+                reduction to smoother onboarding and highly secure data handling.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text">
@@ -64,8 +64,13 @@ export default function About() {
         <Reveal>
           <div className="gradient-border flex h-full flex-col justify-between rounded-3xl p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-brand to-brand-secondary text-2xl font-display text-white">
-                SJ
+              <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-brand/30 shadow-[0_0_15px_rgba(var(--brand),0.3)]">
+                <Image
+                  src="/images/passport.png"
+                  alt={profile.name}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div>
                 <p className="text-sm font-semibold text-text">

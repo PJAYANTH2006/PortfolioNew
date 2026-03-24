@@ -74,7 +74,7 @@ export const projects = [
     highlights: [
       "Responsive SPA for browsing and streaming tracks.",
       "RESTful API with Node.js/Express and MongoDB storage.",
-      "User login, keyword search, and playlist CRUD flows.",
+      "Implemented secure user authentication, intuitive keyword media search, and seamless playlist management systems.",
     ],
     github: "https://github.com/PJAYANTH2006/melody-haven-75.git",
     demo: "https://github.com/PJAYANTH2006/melody-haven-75.git",
@@ -85,7 +85,7 @@ export const projects = [
     stack: ["AI", "React", "Vercel", "HTML"],
     preview: "/images/ai.png",
     highlights: [
-      "LLM-based reasoning for troubleshooting and safety guidance.",
+      "Engineered an intelligent LLM-based reasoning engine to actively troubleshoot household issues and surface crucial safety guidance.",
       "Step-by-step workflows with materials and best practices.",
       "Interactive web interface deployed on Vercel.",
     ],
@@ -101,9 +101,9 @@ export const experience = [
     period: "Internship",
     image: "/images/Intership.png",
     summary: [
-      "Built a full-stack blog platform with secure signup, rich text, and profiles.",
+      "Architected a full-stack publishing platform featuring robust authentication, a rich-text editing experience, and customizable user profiles.",
       "Optimized Node.js/Express APIs to reduce response time by 30%.",
-      "Implemented MongoDB + MySQL storage with authentication safeguards.",
+      "Engineered a dual-database architecture utilizing MongoDB and MySQL to rigidly enforce data isolation and security safeguards.",
     ],
   },
 ];
@@ -113,7 +113,7 @@ export const certifications = [
     title: "Networking Professional",
     issuer: "Oracle",
     year: "Oct 2025",
-    note: "Enterprise networking fundamentals and security.",
+    note: "Mastery of enterprise-grade networking architecture, packet routing, and perimeter security fundamentals.",
     image: "/images/networkin.png",
   },
   {
@@ -127,7 +127,7 @@ export const certifications = [
     title: "Cloud Computing",
     issuer: "NPTEL",
     year: "Apr 2025",
-    note: "Cloud architecture, virtualization, and services.",
+    note: "Comprehensive understanding of scalable cloud architecture, deep virtualization techniques, and modern distributed services.",
     image: "/images/Nptel.png",
   },
   {
