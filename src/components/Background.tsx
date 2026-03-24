@@ -8,19 +8,44 @@ export default function Background() {
       <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-[0.08]" />
       <div className="absolute inset-0 bg-grid opacity-[0.2]" />
       <motion.div
-        className="absolute left-[10%] top-[8%] h-[28rem] w-[28rem] rounded-full bg-brand/25 blur-[140px]"
-        animate={{ y: [0, 30, 0], opacity: [0.5, 0.8, 0.5] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute left-[10%] top-[8%] h-[28rem] w-[28rem] bg-brand/35 blur-[140px]"
+        animate={{ 
+          y: [0, 40, 0], 
+          opacity: [0.4, 0.8, 0.4],
+          borderRadius: [
+            "40% 60% 70% 30% / 40% 50% 60% 50%",
+            "60% 40% 30% 70% / 60% 30% 70% 40%",
+            "40% 60% 70% 30% / 40% 50% 60% 50%"
+          ]
+        }}
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute right-[5%] top-[5%] h-[22rem] w-[22rem] rounded-full bg-brand-secondary/25 blur-[140px]"
-        animate={{ y: [0, -40, 0], opacity: [0.4, 0.7, 0.4] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute right-[5%] top-[5%] h-[25rem] w-[25rem] bg-brand-secondary/35 blur-[140px]"
+        animate={{ 
+          y: [0, -50, 0], 
+          x: [0, -30, 0],
+          opacity: [0.4, 0.7, 0.4],
+          borderRadius: [
+            "60% 40% 30% 70% / 60% 30% 70% 40%",
+            "40% 60% 70% 30% / 40% 50% 60% 50%",
+            "60% 40% 30% 70% / 60% 30% 70% 40%"
+          ]
+        }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-[5%] left-[35%] h-[24rem] w-[24rem] rounded-full bg-brand-accent/20 blur-[160px]"
-        animate={{ y: [0, 20, 0], opacity: [0.4, 0.8, 0.4] }}
-        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[2%] left-[30%] h-[30rem] w-[30rem] bg-brand-accent/25 blur-[160px]"
+        animate={{ 
+          y: [0, 30, 0], 
+          opacity: [0.3, 0.7, 0.3],
+          borderRadius: [
+            "30% 70% 50% 50% / 50% 30% 70% 50%",
+            "50% 50% 30% 70% / 30% 70% 50% 50%",
+            "30% 70% 50% 50% / 50% 30% 70% 50%"
+          ]
+        }}
+        transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute inset-0 opacity-30"
