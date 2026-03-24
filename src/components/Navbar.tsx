@@ -55,7 +55,7 @@ export default function Navbar() {
           href="#top"
           className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-text"
         >
-          {profile.name.split(" ")[0]}
+          sai jayanth
         </a>
         <nav className="hidden items-center gap-5 text-sm text-muted md:flex">
           {navItems.map((item) => (
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Magnetic className="hidden md:block">
             <a
-              href="/Sai_Jayanth_Pothala_CV.pdf"
+              href="/SaiJayanth_CV.pdf"
               className="inline-flex rounded-full border border-border px-4 py-2 text-xs font-semibold text-text transition hover:shadow-glow"
               download
             >

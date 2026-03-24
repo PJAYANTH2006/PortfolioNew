@@ -63,28 +63,30 @@ export default function About() {
           </Reveal>
         </div>
         <Reveal>
-          <div className="gradient-border relative flex h-full flex-col items-center justify-center rounded-3xl p-8 overflow-hidden">
-            <div className="absolute top-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted text-center">
+          <div className="relative flex h-full flex-col items-center justify-center p-4 sm:p-8 overflow-visible">
+            <div className="mb-8 relative z-20">
+              <p className="text-xs uppercase tracking-[0.4em] text-muted text-center font-semibold">
                 Core Stack
               </p>
             </div>
             
             <TechOrbit />
 
-            <div className="absolute bottom-6 flex w-full flex-col items-center justify-center gap-4">
-              <p className="text-xs font-medium text-muted">Currently open to full-time & freelance opportunities</p>
-              <div className="flex items-center gap-3">
+            <div className="mt-8 flex w-full flex-col items-center justify-center gap-5 relative z-20">
+              <p className="text-xs font-semibold text-muted text-center uppercase tracking-widest">Open to opportunities</p>
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="#contact"
-                  className="rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:shadow-glow"
+                  href="/SaiJayanth_CV.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-brand-secondary hover:scale-105"
                 >
-                  Start a project
+                  View CV
                 </a>
                 <a
-                  href="/Sai_Jayanth_Pothala_CV.pdf"
+                  href="/SaiJayanth_CV.pdf"
                   download
-                  className="rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-text transition hover:shadow-glow"
+                  className="rounded-full border border-border/50 bg-white/5 backdrop-blur-sm px-6 py-3 text-sm font-semibold text-text transition hover:bg-white/10 hover:border-border hover:scale-105"
                 >
                   Download CV
                 </a>

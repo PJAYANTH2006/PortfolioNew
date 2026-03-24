@@ -1,14 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, Server, Component, GitBranch, Terminal } from "lucide-react";
+import { Database, Server, Component, GitBranch, Terminal, LayoutTemplate, Palette, Code2 } from "lucide-react";
 
 const stack = [
-  { name: "React", Icon: Component, color: "text-[#61DAFB]", radius: 100, duration: 15, delay: 0 },
-  { name: "Node.js", Icon: Server, color: "text-[#339933]", radius: 140, duration: 25, delay: 0 },
-  { name: "MongoDB", Icon: Database, color: "text-[#47A248]", radius: 90, duration: 12, delay: 0 },
-  { name: "MySQL", Icon: Database, color: "text-[#4479A1]", radius: 150, duration: 20, delay: 0 },
-  { name: "Git", Icon: GitBranch, color: "text-[#F05032]", radius: 110, duration: 18, delay: 0 },
+  { name: "React", Icon: Component, color: "text-[#61DAFB]", radius: 100, duration: 18, delay: 0 },
+  { name: "Node.js", Icon: Server, color: "text-[#339933]", radius: 135, duration: 25, delay: 0 },
+  { name: "MongoDB", Icon: Database, color: "text-[#47A248]", radius: 85, duration: 14, delay: 0 },
+  { name: "MySQL", Icon: Database, color: "text-[#4479A1]", radius: 155, duration: 30, delay: 0 },
+  { name: "Git", Icon: GitBranch, color: "text-[#F05032]", radius: 115, duration: 20, delay: 0 },
+  { name: "Next.js", Icon: LayoutTemplate, color: "text-[#ffffff]", radius: 175, duration: 32, delay: 0 },
+  { name: "Tailwind", Icon: Palette, color: "text-[#38BDF8]", radius: 70, duration: 12, delay: 0 },
+  { name: "TypeScript", Icon: Code2, color: "text-[#3178C6]", radius: 150, duration: 27, delay: 0 },
 ];
 
 export default function TechOrbit() {
