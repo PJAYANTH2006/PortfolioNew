@@ -5,6 +5,7 @@ import { profile } from "@/lib/data";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
 import Reveal from "./Reveal";
+import TechOrbit from "./TechOrbit";
 
 export default function About() {
   return (
@@ -62,52 +63,32 @@ export default function About() {
           </Reveal>
         </div>
         <Reveal>
-          <div className="gradient-border flex h-full flex-col justify-between rounded-3xl p-6">
-            <div className="flex items-center gap-4">
-              <div className="relative h-20 w-20 overflow-hidden rounded-full border-2 border-brand/30 shadow-[0_0_15px_rgba(var(--brand),0.3)]">
-                <Image
-                  src="/images/passport.png"
-                  alt={profile.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-text">
-                  {profile.name}
-                </p>
-                <p className="text-xs text-muted">{profile.role}</p>
-                <p className="text-xs text-muted">Open to collaboration</p>
-              </div>
+          <div className="gradient-border relative flex h-full flex-col items-center justify-center rounded-3xl p-8 overflow-hidden">
+            <div className="absolute top-6">
+              <p className="text-xs uppercase tracking-[0.3em] text-muted text-center">
+                Core Stack
+              </p>
             </div>
-            <div className="mt-6 space-y-4 text-sm text-muted">
-              <div className="flex items-center justify-between">
-                <span>Education</span>
-                <span className="text-text">B.Tech CSE</span>
+            
+            <TechOrbit />
+
+            <div className="absolute bottom-6 flex w-full flex-col items-center justify-center gap-4">
+              <p className="text-xs font-medium text-muted">Currently open to full-time & freelance opportunities</p>
+              <div className="flex items-center gap-3">
+                <a
+                  href="#contact"
+                  className="rounded-full bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:shadow-glow"
+                >
+                  Start a project
+                </a>
+                <a
+                  href="/Sai_Jayanth_Pothala_CV.pdf"
+                  download
+                  className="rounded-full border border-border px-6 py-2.5 text-sm font-semibold text-text transition hover:shadow-glow"
+                >
+                  Download CV
+                </a>
               </div>
-              <div className="flex items-center justify-between">
-                <span>Certifications</span>
-                <span className="text-text">Oracle, NPTEL</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span>Availability</span>
-                <span className="text-text">Internships, Freelance</span>
-              </div>
-            </div>
-            <div className="mt-6 flex items-center gap-3">
-              <a
-                href="#contact"
-                className="rounded-full bg-brand px-4 py-2 text-xs font-semibold text-white transition hover:shadow-glow"
-              >
-                Start a project
-              </a>
-              <a
-                href="/Sai_Jayanth_Pothala_CV.pdf"
-                download
-                className="rounded-full border border-border px-4 py-2 text-xs font-semibold text-text transition hover:shadow-glow"
-              >
-                Download CV
-              </a>
             </div>
           </div>
         </Reveal>
