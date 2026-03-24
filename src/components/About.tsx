@@ -17,32 +17,34 @@ export default function About() {
             subtitle="I blend UX clarity with reliable backend systems to ship experiences that feel fast, collaborative, and trustworthy."
           />
           <Reveal>
-            <div className="glass rounded-3xl p-6">
-              <p className="text-sm text-muted">
-                I am a {profile.role} who builds real-time
-                collaboration tools, AI-guided workflows, and scalable
-                full-stack platforms. I focus on delivering measurable impact—from latency
-                reduction to smoother onboarding and highly secure data handling.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text">
-                  Real-time systems
-                </span>
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text">
-                  AI-assisted UX
-                </span>
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text">
-                  Performance tuning
-                </span>
-                <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text">
-                  Secure auth flows
-                </span>
+            <div className="liquid-float">
+              <div className="glass rounded-3xl p-6">
+                <p className="text-sm text-muted">
+                  I am a {profile.role} who builds real-time
+                  collaboration tools, AI-guided workflows, and scalable
+                  full-stack platforms. I focus on delivering measurable impact—from latency
+                  reduction to smoother onboarding and highly secure data handling.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text shadow-glow">
+                    Real-time systems
+                  </span>
+                  <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text shadow-glow">
+                    AI-assisted UX
+                  </span>
+                  <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text shadow-glow">
+                    Performance tuning
+                  </span>
+                  <span className="rounded-full bg-white/10 px-4 py-2 text-xs text-text shadow-glow">
+                    Secure auth flows
+                  </span>
+                </div>
               </div>
             </div>
           </Reveal>
           <Reveal>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 liquid-float-alt-1">
                 <p className="text-xs uppercase tracking-[0.3em] text-muted">
                   Now
                 </p>
@@ -51,7 +53,7 @@ export default function About() {
                   WebRTC.
                 </p>
               </div>
-              <div className="glass rounded-2xl p-5">
+              <div className="glass rounded-2xl p-5 liquid-float-alt-2">
                 <p className="text-xs uppercase tracking-[0.3em] text-muted">
                   Previously
                 </p>

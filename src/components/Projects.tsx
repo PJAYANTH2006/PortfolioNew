@@ -57,11 +57,14 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10% 0px" }}
             transition={{ delay: index * 0.08 }}
+            className="h-full"
           >
-            <ProjectCard
-              project={project}
-              onOpen={() => setSelected(project)}
-            />
+            <div className={`h-full ${index % 3 === 0 ? "liquid-float" : index % 3 === 1 ? "liquid-float-alt-1" : "liquid-float-alt-2"}`}>
+              <ProjectCard
+                project={project}
+                onOpen={() => setSelected(project)}
+              />
+            </div>
           </motion.div>
         ))}
       </ScrollSkew>

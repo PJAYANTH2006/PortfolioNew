@@ -30,8 +30,9 @@ export default function Experience() {
               transition={{ delay: index * 0.1 }}
             >
               <div className="absolute -left-[34px] top-2 h-4 w-4 rounded-full bg-brand shadow-glow" />
-              <div className="glass rounded-2xl p-6">
-                {(item as any).image && (
+              <div className={index % 2 === 0 ? "liquid-float" : "liquid-float-alt-2"}>
+                <div className="glass rounded-2xl p-6">
+                  {(item as any).image && (
                   <div 
                     className="group relative h-48 w-full overflow-hidden rounded-xl mb-6 cursor-pointer border border-border"
                     onClick={() => setSelectedImage((item as any).image)}
@@ -66,6 +67,7 @@ export default function Experience() {
                     <li key={line}>• {line}</li>
                   ))}
                 </ul>
+                </div>
               </div>
             </motion.div>
           ))}

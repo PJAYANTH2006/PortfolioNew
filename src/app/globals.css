@@ -92,3 +92,24 @@ body {
   background: var(--card);
   z-index: -1;
 }
+
+@keyframes liquidFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+  100% { transform: translateY(0px); }
+}
+
+.liquid-float {
+  animation: liquidFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.liquid-float-alt-1 {
+  animation: liquidFloat 7.5s ease-in-out infinite -2s;
+  will-change: transform;
+}
+
+.liquid-float-alt-2 {
+  animation: liquidFloat 5s ease-in-out infinite -4s;
+  will-change: transform;
+}

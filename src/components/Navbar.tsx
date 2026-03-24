@@ -50,7 +50,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mx-auto flex w-[92%] max-w-6xl items-center justify-between rounded-full border border-border bg-surface/80 px-4 py-3 backdrop-blur-xl">
+      <div className="mx-auto flex w-[92%] max-w-6xl items-center justify-between rounded-full border border-border bg-surface/80 px-4 py-3 backdrop-blur-xl liquid-float-alt-1">
         <a
           href="#top"
           className="font-display text-sm font-semibold uppercase tracking-[0.3em] text-text"

@@ -19,10 +19,12 @@ export default function Certifications() {
           subtitle="Learning track progress and ongoing upskilling."
         />
         <div className="grid gap-6 md:grid-cols-2 mt-8">
-          {certifications.map((cert) => (
+          {certifications.map((cert, index) => (
             <div 
               key={cert.title} 
-              className="glass group relative overflow-hidden rounded-2xl p-6 cursor-pointer transition duration-300 hover:-translate-y-1 hover:shadow-glow min-h-[160px]"
+              className={`glass group relative overflow-hidden rounded-2xl p-6 cursor-pointer transition duration-300 hover:shadow-glow min-h-[160px] ${
+                index % 3 === 0 ? "liquid-float" : index % 3 === 1 ? "liquid-float-alt-1" : "liquid-float-alt-2"
+              }`}
               onClick={() => setSelectedImage((cert as any).image)}
             >
               {(cert as any).image && (
